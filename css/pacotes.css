@@ -1,8 +1,16 @@
 @charset "utf-8";
-/* CSS Document */
+/* CSS Document */ :root {
+  --yellow: #fbdb2c;
+  --blue: #2BC6EE;
+  --dark-grey: #49494C;
+  --light-grey: #f4f4f4;
+}
+html {
+  font-size: 62.5%;
+}
 * {
   box-sizing: border-box;
-  color: #49494C;
+  color: var(--dark-grey);
   padding: 0px;
   margin: 0px;
 }
@@ -10,14 +18,25 @@ a {
   text-decoration: none;
 }
 body {
-  max-width: 1920px;
-  background-image: url("../Images/Background-Site-cinza.jpg");
   font-family: Inter;
-  margin: auto;
+  font-size: 1.4rem;
+  margin: 0 auto;
+  background-image: url("../Images/Background-Site-cinza.jpg");
   background-position: 20% 0%;
   background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
-  animation: luz 8s infinite;
+  animation:
+    luz 8s infinite, fadeInAll ease 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAll {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes luz {
   0%, 100% {
@@ -29,25 +48,25 @@ body {
 }
 .cabecalho {
   width: 100%;
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: 1rem;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 .cabecalho-top {
-  padding: 0px 10px 0px 10px;
+  padding: 0px 1rem 0px 1rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 .logo-e-texto {
-  font-size: 2.2rem;
+  font-size: 3rem;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 /*texto e logo*/
 .logo {
-  width: 1.6rem;
+  width: 2.2rem;
   height: 100%;
   background-image: url("../Images/dakrgreylogo-png-54x150png.png");
   background-repeat: no-repeat;
@@ -55,12 +74,12 @@ body {
   background-position: right;
   transition: 0.4s;
 }
-.logo:hover {
+.logo-e-texto:hover .logo {
   background-image: url("../Images/dakrgreygradlogo-png-54x150.png");
 }
 .texto-logo {
-  padding-top: 12px;
-  font-family: "Two Weekends Sans";
+  padding-top: 1rem;
+  font-family: "two Weekends Sans";
   font-weight: bolder;
   display: flex;
   flex-direction: column;
@@ -72,10 +91,11 @@ body {
 /*fim texto e logo*/
 /*login e icones*/
 .login-e-icones {
-  padding-top: 6px;
+  padding-top: 0.5rem;
   display: flex;
   font-weight: 800;
   justify-content: center;
+  gap: 1rem;
 }
 .login-reg {
   display: flex;
@@ -83,16 +103,15 @@ body {
   gap: 4px;
 }
 .icone-reg {
-  margin-top: 4px;
-  width: 32px;
-  height: 32px;
+  margin-top: 0.5rem;
+  width: 3.2rem;
   background-image: url("../Images/icone-login-32x32.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 .login-cadastro {
   font-weight: bolder;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 .login-cadastro a {
   -webkit-background-clip: text;
@@ -104,14 +123,58 @@ body {
   background-clip: text;
   color: transparent;
 }
+/*botao do drop*/
+.drop-botao {
+  background-image: url("../Images/hamburguer-menu.png");
+  background-size: contain;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+}
+.drop-botao:hover {
+  background-image: url("../Images/hamburguer-menu-gradient.png");
+  background-size: contain;
+}
+/*container do drop*/
+.drop-container {
+  align-self: center;
+  text-align: right;
+  position: relative;
+}
+/*conteudo do drop*/
+.drop-content {
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: var(--dark-grey);
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+/*links do dropdown*/
+.drop-content a {
+  border-bottom: solid thin var(--light-grey);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--light-grey);
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  display: block;
+}
+/*mudança de cor do link no hover*/
+.drop-content a:hover {
+  color: var(--yellow);
+}
+.drop-container:hover .drop-content {
+  display: block;
+}
 .icones {
-  margin-right: 10px;
+  margin-right: 1rem;
   display: flex;
-  gap: 6px;
-  height: 40px;
+  gap: 0.5rem;
+  height: 4rem;
 }
 .icones a {
-  width: 5vw;
+  width: 3rem;
   max-width: 40px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -138,11 +201,21 @@ body {
 }
 /*fim login e icones*/
 .faixa {
-  margin: 4px 0px 4px 0px;
-  height: 4px;
+  align-self: center;
+  margin: 0.5rem 0 0.5rem 0;
+  height: 0.5rem;
   width: 100%;
   background-size: cover;
   background-image: url("../Images/background-gradient.png");
+  animation: faixa 6s;
+}
+@keyframes faixa {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 /*menu principal*/
 .nav-bar {
@@ -152,7 +225,7 @@ body {
 }
 .menu {
   width: 100%;
-  background-color: #49494c;
+  background-color: var(--dark-grey);
   list-style: none;
   height: 100%;
   display: flex;
@@ -163,74 +236,58 @@ body {
   margin-right: 10px;
 }
 .menu li a {
-  border-right: solid thin #f4f4f4;
+  border-right: solid thin var(--light-grey);
   padding-right: 10px;
   display: block;
   color: #f4f4f4;
-  font-size: 1.2em;
+  font-size: 2rem;
   transition: 0.2s;
 }
 .menu a:hover {
-  color: #fbdb2c;
-}
-/*botao do drop*/
-.drop-botao {
-  width: 100%;
-  text-align: right;
-  background-color: transparent;
-  color: #49494C;
-  font-size: 1rem;
-  font-weight: bolder;
-  padding: 10px;
-  border: none;
-}
-/*container do drop*/
-.drop-container {
-	border: solid 1px;
-  text-align: right;
-  width: 200px;
-  position: relative;
-}
-/*conteudo do drop*/
-.drop-content {
-  display: none;
-  position: absolute;
-  width: 100%;
-  background-color: transparent;
-  z-index: 1;
-}
-/*links do dropdown*/
-.drop-content a {
-  text-shadow: 0px 2px 8px #49494c5a;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #49494C;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-/*mudança de cor do link no hover*/
-.drop-content a:hover {
-  color: #fbdb2c;
-  text-shadow: 2px 2px 0px #49494c;
-}
-.drop-container:hover .drop-content {
-  display: block;
+  color: var(--yellow);
 }
 /*fim menu principal*/
-/*usado para aumentar elementos para telas maiores*/
+.main {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+.footer {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: var(--dark-grey);
+  display: flex;
+  flex-direction: column;
+	text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.footer p {
+  color: var(--light-grey);
+}
+/*usado para aumentar ou mostrar elementos para telas menores*/
 @media only screen and (max-width: 600px) {
   .menu {
     display: none;
   }
-  .logo-e-texto {
-    width: 100%;
-	  font-size: 1.2rem;
-  }
-  .login-e-icones {
+  .icones {
     display: none;
   }
+  .login-e-icones {
+    align-self: flex-end;
+  }
+  input::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  .passagem, .bt-bvoo, .logo-e-texto {
+    font-size: 1.4rem;
+    font-weight: bolder;
+  }
+  .logo {
+    width: 1rem;
+  }
 }
+/*usado para aumentar ou mostrar elementos em telas maiores*/
 @media only screen and (min-width: 600px) {
   .drop-botao {
     display: none;
@@ -239,9 +296,3 @@ body {
     display: none;
   }
 }
-/*TEXTO COM IMAGEM NO FUNDO
--webkit-background-clip: text;
-  background-image: url("../Images/background-gradient.png");
-  background-size: cover;
-  background-clip: text;
-  color: transparent;*/
