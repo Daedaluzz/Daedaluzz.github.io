@@ -62,12 +62,10 @@ body {
 .logo-e-texto {
   font-size: 3rem;
   display: flex;
-  justify-content: flex-start;
 }
 /*texto e logo*/
 .logo {
   width: 2.2rem;
-  height: 100%;
   background-image: url("../Images/dakrgreylogo-png-54x150png.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -148,7 +146,6 @@ body {
   right: 0px;
   background-color: var(--dark-grey);
   border-radius: 0.5rem;
-  z-index: 1;
 }
 /*links do dropdown*/
 .drop-content a {
@@ -207,7 +204,7 @@ body {
   width: 100%;
   background-size: cover;
   background-image: url("../Images/background-gradient.png");
-  animation: faixa 6s;
+  animation: faixa 4s;
 }
 @keyframes faixa {
   0% {
@@ -254,7 +251,10 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+	animation: fadeInAll ease 4s;
+  animation-fill-mode: forwards;
 }
+/*inicio do elemento passagem*/
 .passagem {
   margin-top: 2rem;
   font-size: 2.5rem;
@@ -334,11 +334,9 @@ body {
   font-weight: bold;
 }
 /*final do elemento passagem*/
-/**inicio elemento principal*/
-.main{
-	  animation: fadeInAll ease 4s;
-  animation-fill-mode: forwards;
-}
+/*inicio do elemento principal*/
+/*inicio da grid do mapa*/
+/*position relative no pai e position absolut no filho para fixar a imagem ao farol*/
 .grid-mapa {
   width: 700px;
   height: 700px;
@@ -350,7 +348,8 @@ body {
   background-repeat: no-repeat;
   background-position: center, top;
 }
-.farolzin{
+.farolzin {
+  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -359,71 +358,223 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  transition: 0.5s;
 }
-.pe-img{
-	display: none;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	background-image: url("../Images/recife.jpg");
-	background-size: cover;
-	background-position: center;
-	width: 40vw;
-	max-width: 300px;
-	height: 30vh;
-	max-height: 200px;
-	position: absolute;
-	left: 50%;
-	top: 30%;
-	z-index: 1;
-	border-radius: 5px;
-
-
+.pe-img {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../Images/recife.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+  max-width: 300px;
+  height: 30vh;
+  max-height: 200px;
+  position: absolute;
+  right: 45px;
+  z-index: 1;
+  border-radius: 5px;
+}
+@keyframes smooth-appear {
+  from {
+    right: 80px
+  }
+  to {
+    right: 45px
+  }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes smooth-appear55 {
+  from {
+    right: 80px
+  }
+  to {
+    right: 45px
+  }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 .pe {
   grid-row: 5;
   grid-column: 14;
 }
-.pe:hover .pe-img{
-	display: flex;
+.pe:hover .pe-img {
+  display: flex;
+  animation: smooth-appear 0.5s ease;
+  opacity: 1;
 }
-.ba-img{
-	display: none;
-	background-color: red;
-	max-width: 400px;
-	width: 40%;
-	height: 600px;
-	position: absolute;
-	left: 5%;
-	top: 25%;
-	z-index: 1;
+.ba-img {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../Images/salvador.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+  max-width: 300px;
+  height: 30vh;
+  max-height: 200px;
+  position: absolute;
+  right: 45px;
+  z-index: 1;
+  border-radius: 5px;
 }
 .ba {
   grid-row: 7;
   grid-column: 12;
 }
-.ba:hover .ba-img{
-	display: block;
+.ba:hover .ba-img {
+  display: flex;
+  animation: smooth-appear 0.5s ease;
+  opacity: 1;
 }
 .pe:hover, .ba:hover, .mg:hover, .rj:hover, .sp:hover, .rs:hover {
   background-image: url("../Images/dakrgreygradlogo-png-54x150.png");
+}
+.mg-img {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../Images/bh.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+  max-width: 300px;
+  height: 30vh;
+  max-height: 200px;
+  position: absolute;
+  right: 55px;
+  z-index: 1;
+  border-radius: 5px;
 }
 .mg {
   grid-row: 9;
   grid-column: 11;
 }
+.mg:hover .mg-img {
+  display: flex;
+  animation: smooth-appear55 0.5s ease;
+  opacity: 1;
+}
+@keyframes smooth-appear55 {
+  from {
+    right: 80px
+  }
+  to {
+    right: 55px
+  }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+.rj-img {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../Images/RJ.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+  max-width: 300px;
+  height: 30vh;
+  max-height: 200px;
+  position: absolute;
+  right: 30px;
+  z-index: 1;
+  border-radius: 5px;
+}
 .rj {
-	margin-left: 40px;
+  margin-left: 40px;
   grid-row: 10;
   grid-column: 11 / 12;
+}
+.rj:hover .rj-img {
+  display: flex;
+  animation: smooth-appear30 0.5s ease;
+  opacity: 1;
+}
+@keyframes smooth-appear30 {
+  from {
+    right: 80px
+  }
+  to {
+    right: 30px
+  }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+.sp-img {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../Images/sp.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+  max-width: 300px;
+  height: 30vh;
+  max-height: 200px;
+  position: absolute;
+  right: 45px;
+  z-index: 1;
+  border-radius: 5px;
 }
 .sp {
   grid-row: 10;
   grid-column: 10;
 }
+.sp:hover .sp-img {
+  display: flex;
+  animation: smooth-appear 0.5s ease;
+  opacity: 1;
+}
+.rs-img {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../Images/rs.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+  max-width: 300px;
+  height: 30vh;
+  max-height: 200px;
+  position: absolute;
+  right: 45px;
+  z-index: 1;
+  border-radius: 5px;
+}
 .rs {
   grid-row: 13;
   grid-column: 8;
+}
+.rs:hover .rs-img {
+  display: flex;
+  animation: smooth-appear 0.5s ease;
+  opacity: 1;
 }
 .grid-mapa p {
   color: white;

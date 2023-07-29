@@ -236,7 +236,7 @@ body {
   border-right: solid thin var(--light-grey);
   padding-right: 10px;
   display: block;
-  color: #f4f4f4;
+  color: var(--light-grey);
   font-size: 2rem;
   transition: 0.2s;
 }
@@ -249,6 +249,8 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
+	animation: fadeInAll ease 4s;
+  animation-fill-mode: forwards;
 }
 /*inicio do elemento passagem*/
 .passagem {
