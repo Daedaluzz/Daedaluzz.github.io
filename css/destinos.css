@@ -42,7 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  animation: fadeInAll ease 4s;
+  animation: fadeInAll ease 1s;
   animation-fill-mode: forwards;
 }
 @keyframes fadeInAll {
@@ -161,7 +161,7 @@ body {
 .drop-content a:hover {
   color: var(--yellow);
 }
-.drop-container:hover .drop-content {
+.drop-container:hover .drop-content{
   display: block;
 }
 .icones {
@@ -244,16 +244,6 @@ body {
   color: var(--yellow);
 }
 /*fim menu principal*/
-.main {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-	animation: fadeInAll ease 4s;
-  animation-fill-mode: forwards;
-}
 /*inicio do elemento passagem*/
 .passagem {
   margin-top: 2rem;
@@ -334,6 +324,22 @@ body {
   font-weight: bold;
 }
 /*final do elemento passagem*/
+.main {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInAll ease 1s;
+  animation-fill-mode: forwards;
+}
+h3{
+	position: absolute;
+	align-self: flex-start;
+	font-size: 4rem;
+	width: 20%;
+}
 /*inicio do elemento principal*/
 /*inicio da grid do mapa*/
 /*position relative no pai e position absolut no filho para fixar a imagem ao farol*/
@@ -576,10 +582,53 @@ body {
   animation: smooth-appear 0.5s ease;
   opacity: 1;
 }
-.grid-mapa p {
+.grid-mapa p, figcaption {
   color: white;
   font-size: 2rem;
   font-weight: bolder;
+}
+/*fim do elemento grid-mapa*/
+/*inicio do elemento galeria para mobiel*/
+.grid-galeria {
+  padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+  list-style: none;
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+  gap: 1rem;
+}
+.grid-galeria figure {
+  margin: 0;
+  height: 20rem;
+  display: grid;
+  grid-template-areas: "card";
+  place-items: end;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+figure > * {
+  grid-area: card;
+}
+.grid-galeria img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: 20rem;
+}
+/*legenda da imagem*/
+.grid-galeria figcaption {
+  padding: 0.25em 0.5em;
+  border-radius: 4px 0 0 0;
+  background-color: var(--light-grey);
+  text-align: center;
+  color: var(--dark-grey);
+  margin-bottom: 0.5rem;
+  transform: translateY(120%);
+  transition: transform 600ms ease-in;
+}
+.grid-galeria figure:hover figcaption{
+  transform: translateY(0);
 }
 .footer {
   margin-top: 1rem;
@@ -624,4 +673,13 @@ body {
   .drop-container {
     display: none;
   }
+}
+/*usado para ocultar o mapa em larguras menores que 700px*/
+@media only screen and (max-width: 700px) {
+  .grid-mapa {
+    display: none;
+  }
+	.grid-galeria{
+		display: grid;
+	}
 }
