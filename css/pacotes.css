@@ -58,7 +58,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-	 align-items: flex-end;
+  align-items: flex-end;
 }
 .logo-e-texto {
   font-size: 3rem;
@@ -147,16 +147,15 @@ body {
   right: 0px;
   background-color: var(--dark-grey);
   border-radius: 0.5rem;
-animation: slidedown 0.5s ease;
-  
+  animation: slidedown 0.5s ease;
 }
 @keyframes slidedown {
   0% {
-	  height: 0;
+    height: 0;
     transform: translateY(-10px);
   }
   100% {
-	 height:16.5rem;
+    height: 16.5rem;
     transform: translateY(0);
   }
 }
@@ -168,16 +167,16 @@ animation: slidedown 0.5s ease;
   color: var(--light-grey);
   padding: 1rem 1.5rem;
   text-decoration: none;
-  display: block; 
-	animation: fadein 1s ease;
+  display: block;
+  animation: fadein 1s ease;
 }
 @keyframes fadein {
-	0%{
-		opacity: 0;
-	}
-	100%{
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*mudança de cor do link no hover*/
 .drop-content a:hover {
@@ -267,12 +266,131 @@ animation: slidedown 0.5s ease;
 }
 /*fim menu principal*/
 .main {
-  width: 100%;
-  margin: auto;
+  width: 80%;
+  margin: 2rem auto;
+  border: thin solid var(--yellow);
   display: flex;
   flex-direction: column;
-	animation: fadeInAll ease 4s;
-  animation-fill-mode: forwards;
+  align-items: center;
+}
+.pacotes {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pacotes li {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+}
+.pacotes figure {
+  display: flex;
+  flex: 1 0 320px;
+  justify-content: space-between;
+}
+.pacotes img {
+  border-radius: 0.5rem;
+  display: block;
+  width: 98%;
+  object-fit: cover;
+  height: 30rem;
+}
+.faixah {
+  align-self: flex-end;
+  left: 0;
+  position: absolute;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--yellow);
+  animation: faixah 5s ease;
+}
+@keyframes faixah {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.faixav {
+  margin-left: 0.5rem;
+  width: 0.2rem;
+  height: 25rem;
+  background-color: var(--yellow);
+  animation: faixav 5s ease;
+}
+@keyframes faixav {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 25rem;
+  }
+}
+.pacotes container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 320px;
+  animation: slidedown2 2s ease;
+}
+@keyframes slidedown2 {
+  0% {
+    opacity: 0;
+    height: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+    transform: translateY(0);
+  }
+}
+.pacotes h3, p {
+  text-align: left;
+  display: block;
+  width: 100%;
+  background-color: var(--light-grey);
+  border-radius: 0.5rem;
+}
+p {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.pacotes div {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  width: 100%;
+  height: 8rem;
+  border: thin solid var(--yellow);
+  background-color: var(--light-grey);
+  border-radius: 0.5rem;
+}
+.pacotes button {
+  background-color: transparent;
+  width: 12rem;
+  height: 5rem;
+  border: thin solid var(--dark-grey);
+  transition: 0.5s ease;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+.pacotes button:hover {
+  color: var(--yellow);
+  border: thin solid var(--yellow);
 }
 .footer {
   margin-top: 1rem;
@@ -280,7 +398,7 @@ animation: slidedown 0.5s ease;
   background-color: var(--dark-grey);
   display: flex;
   flex-direction: column;
-	text-align: center;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
@@ -306,7 +424,7 @@ animation: slidedown 0.5s ease;
     font-weight: bolder;
   }
   .logo {
-    width: 1rem;
+    width: 1.2rem;
   }
 }
 /*usado para aumentar ou mostrar elementos em telas maiores*/

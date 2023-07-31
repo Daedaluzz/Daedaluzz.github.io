@@ -77,7 +77,7 @@ body {
   background-image: url("../Images/dakrgreygradlogo-png-54x150.png");
 }
 .texto-logo {
-  padding-top: 1rem;
+	padding-top: 1rem;
   font-family: "two Weekends Sans";
   font-weight: bolder;
   display: flex;
@@ -479,7 +479,7 @@ animation: slidedown 0.5s ease;
     font-weight: bolder;
   }
   .logo {
-    width: 1rem;
+     width: 1.2rem;
   }
 }
 /*usado para aumentar ou mostrar elementos em telas maiores*/
