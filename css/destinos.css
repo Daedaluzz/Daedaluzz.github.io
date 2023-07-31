@@ -58,6 +58,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .logo-e-texto {
   font-size: 3rem;
@@ -146,6 +147,17 @@ body {
   right: 0px;
   background-color: var(--dark-grey);
   border-radius: 0.5rem;
+  animation: slidedown 0.5s ease;
+}
+@keyframes slidedown {
+  0% {
+    height: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    height: 16.5rem;
+    transform: translateY(0);
+  }
 }
 /*links do dropdown*/
 .drop-content a {
@@ -156,12 +168,21 @@ body {
   padding: 1rem 1.5rem;
   text-decoration: none;
   display: block;
+  animation: fadein 1s ease;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*mudança de cor do link no hover*/
 .drop-content a:hover {
   color: var(--yellow);
 }
-.drop-container:hover .drop-content{
+.drop-container:hover .drop-content {
   display: block;
 }
 .icones {
@@ -328,19 +349,20 @@ body {
   width: 100%;
   margin: auto;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   animation: fadeInAll ease 1s;
   animation-fill-mode: forwards;
 }
-h3{
-	position: absolute;
-	align-self: flex-start;
-	font-size: 4rem;
-	width: 20%;
-}
 /*inicio do elemento principal*/
+h3 {
+  margin-top: 1rem;
+  color: var(--dark-grey);
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 0.5rem 0.5rem 1rem white;
+}
 /*inicio da grid do mapa*/
 /*position relative no pai e position absolut no filho para fixar a imagem ao farol*/
 .grid-mapa {
@@ -617,18 +639,13 @@ figure > * {
   height: 20rem;
 }
 /*legenda da imagem*/
-.grid-galeria figcaption {
+figcaption {
   padding: 0.25em 0.5em;
   border-radius: 4px 0 0 0;
   background-color: var(--light-grey);
   text-align: center;
   color: var(--dark-grey);
   margin-bottom: 0.5rem;
-  transform: translateY(120%);
-  transition: transform 600ms ease-in;
-}
-.grid-galeria figure:hover figcaption{
-  transform: translateY(0);
 }
 .footer {
   margin-top: 1rem;
@@ -679,7 +696,7 @@ figure > * {
   .grid-mapa {
     display: none;
   }
-	.grid-galeria{
-		display: grid;
-	}
+  .grid-galeria {
+    display: grid;
+  }
 }

@@ -42,7 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  animation: fadeInAll ease 1s;
+  animation: fadeInAll ease 4s;
   animation-fill-mode: forwards;
 }
 @keyframes fadeInAll {
@@ -58,6 +58,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+	 align-items: flex-end;
 }
 .logo-e-texto {
   font-size: 3rem;
@@ -146,6 +147,18 @@ body {
   right: 0px;
   background-color: var(--dark-grey);
   border-radius: 0.5rem;
+animation: slidedown 0.5s ease;
+  
+}
+@keyframes slidedown {
+  0% {
+	  height: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+	 height:16.5rem;
+    transform: translateY(0);
+  }
 }
 /*links do dropdown*/
 .drop-content a {
@@ -155,7 +168,16 @@ body {
   color: var(--light-grey);
   padding: 1rem 1.5rem;
   text-decoration: none;
-  display: block;
+  display: block; 
+	animation: fadein 1s ease;
+}
+@keyframes fadein {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
 }
 /*mudança de cor do link no hover*/
 .drop-content a:hover {
@@ -248,10 +270,8 @@ body {
   width: 100%;
   margin: auto;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
-	animation: fadeInAll ease 1s;
+	animation: fadeInAll ease 4s;
   animation-fill-mode: forwards;
 }
 .footer {
