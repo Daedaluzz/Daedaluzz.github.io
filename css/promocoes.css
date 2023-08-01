@@ -27,6 +27,8 @@ body {
   background-size: cover;
   background-attachment: fixed;
   animation: luz 8s infinite;
+  background-color: var(--light-grey);
+  background-blend-mode: hard-light;
 }
 @keyframes luz {
   0%, 100% {
@@ -58,7 +60,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-	 align-items: flex-end;
+  align-items: flex-end;
 }
 .logo-e-texto {
   font-size: 3rem;
@@ -147,16 +149,15 @@ body {
   right: 0px;
   background-color: var(--dark-grey);
   border-radius: 0.5rem;
-animation: slidedown 0.5s ease;
-  
+  animation: slidedown 0.5s ease;
 }
 @keyframes slidedown {
   0% {
-	  height: 0;
+    height: 0;
     transform: translateY(-10px);
   }
   100% {
-	 height:16.5rem;
+    height: 16.5rem;
     transform: translateY(0);
   }
 }
@@ -168,16 +169,16 @@ animation: slidedown 0.5s ease;
   color: var(--light-grey);
   padding: 1rem 1.5rem;
   text-decoration: none;
-  display: block; 
-	animation: fadein 1s ease;
+  display: block;
+  animation: fadein 1s ease;
 }
 @keyframes fadein {
-	0%{
-		opacity: 0;
-	}
-	100%{
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*mudança de cor do link no hover*/
 .drop-content a:hover {
@@ -271,8 +272,147 @@ animation: slidedown 0.5s ease;
   margin: auto;
   display: flex;
   flex-direction: column;
-	animation: fadeInAll ease 4s;
+  animation: fadeInAll ease 4s;
   animation-fill-mode: forwards;
+}
+h1 {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+.faixav {
+  margin: 5rem 0;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--blue);
+  animation: faixav 5s ease;
+}
+@keyframes faixav {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.galeria-promo {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.promocoes {
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1rem;
+  padding: 0.5rem;
+  animation: slidedown 2s ease;
+}
+@keyframes slidedown {
+  0% {
+    opacity: 0;
+    height: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+    transform: translateY(0);
+  }
+}
+.promo-card {
+  position: relative;
+  background-color: #f4f4f49a;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.2rem 1rem 0.1rem #49494c2a;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.promo-card:after {
+  content: '';
+  width: 0.2rem;
+  height: 20rem;
+  position: absolute;
+  left: 1%;
+  top: 70%;
+  transition: top, opacity;
+  transition-duration: 800ms;
+  transition-timing-function: ease;
+  background: linear-gradient(transparent, var(--blue), transparent);
+  opacity: 0;
+}
+.promo-card:hover:after {
+  top: 25%;
+  opacity: 1;
+}
+.promo-card ul {
+  list-style: none;
+}
+.promo-card li:before {
+  content: '\2713';
+  margin-right: 0.5rem;
+}
+.promo-card figure {
+  position: relative;
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  --gallery-aspect-ratio: 4/3;
+}
+@supports (aspect-ratio:1) {
+  .promo-card figure, .promo-card img {
+    aspect-ratio: var(--gallery-aspect-ratio);
+    height: auto;
+  }
+}
+figure img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+figcaption {
+  position: absolute;
+  top: 0;
+  padding: 0.25em 0.5em;
+  border-radius: 0 0 0.5rem 0;
+  background-color: var(--light-grey);
+  transform: translateY(-100%);
+  transition: transform 600ms ease-in;
+}
+figure:hover figcaption {
+  transform: translateY(0%);
+}
+.texto-promo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.promo-card li {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.texto-promo span {
+  color: var(--blue);
+}
+.promo-card button {
+  background-color: transparent;
+  width: 12rem;
+  height: 5rem;
+  border: thin solid var(--dark-grey);
+  transition: 0.5s ease;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+.promo-card button:hover {
+  color: var(--blue);
+  border: thin solid var(--blue);
 }
 .footer {
   margin-top: 1rem;
@@ -280,7 +420,7 @@ animation: slidedown 0.5s ease;
   background-color: var(--dark-grey);
   display: flex;
   flex-direction: column;
-	text-align: center;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
@@ -306,7 +446,7 @@ animation: slidedown 0.5s ease;
     font-weight: bolder;
   }
   .logo {
-  width: 1.2rem;
+    width: 1.2rem;
   }
 }
 /*usado para aumentar ou mostrar elementos em telas maiores*/

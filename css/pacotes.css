@@ -327,6 +327,7 @@ body {
 }
 .pacotes li {
   background-color: #f4f4f48a;
+	border-radius: 0.5rem;
   position: relative;
   width: 100%;
   flex-basis: 1 1 300px;
