@@ -44,6 +44,8 @@ body {
   flex-wrap: wrap;
   animation: fadeInAll ease 4s;
   animation-fill-mode: forwards;
+		position: relative;
+	z-index: 1;
 }
 @keyframes fadeInAll {
   0% {
@@ -58,7 +60,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-	 align-items: flex-end;
+  align-items: flex-end;
 }
 .logo-e-texto {
   font-size: 3rem;
@@ -66,18 +68,16 @@ body {
 }
 /*texto e logo*/
 .logo {
-  width: 2.2rem;
-  background-image: url("../Images/dakrgreylogo-png-54x150png.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
+  display: block;
+  object-fit: cover;
+  height: 6.8rem;
   transition: 0.4s;
 }
 .logo-e-texto:hover .logo {
   background-image: url("../Images/dakrgreygradlogo-png-54x150.png");
 }
 .texto-logo {
-	padding-top: 1rem;
+  padding-top: 1rem;
   font-family: "two Weekends Sans";
   font-weight: bolder;
   display: flex;
@@ -94,12 +94,13 @@ body {
   display: flex;
   font-weight: 800;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
+	position: relative;
 }
 .login-reg {
   display: flex;
   flex-direction: row;
-  gap: 4px;
+  gap: 0.5rem;
 }
 .icone-reg {
   margin-top: 0.5rem;
@@ -136,28 +137,33 @@ body {
 }
 /*container do drop*/
 .drop-container {
+	padding-top: 1rem;
   align-self: center;
   text-align: right;
-  position: relative;
+  position: absolute;
+	right: 0;
+	top:0;
 }
 /*conteudo do drop*/
 .drop-content {
+	position: relative;
+	margin-top:1rem;
+ width: 92vw;
   display: none;
-  position: absolute;
   right: 0px;
   background-color: var(--dark-grey);
   border-radius: 0.5rem;
-animation: slidedown 0.5s ease;
-  
+	 animation: slidedown 0.6s ease-in;
+
 }
 @keyframes slidedown {
   0% {
+	  transform: translateY(-1rem);
 	  height: 0;
-    transform: translateY(-10px);
   }
   100% {
-	 height:16.5rem;
-    transform: translateY(0);
+	  transform: translateY(0rem);
+	  height: 100%;
   }
 }
 /*links do dropdown*/
@@ -168,16 +174,16 @@ animation: slidedown 0.5s ease;
   color: var(--light-grey);
   padding: 1rem 1.5rem;
   text-decoration: none;
-  display: block; 
-	animation: fadein 1s ease;
+  display: block;
+  animation: fadein 1s ease;
 }
 @keyframes fadein {
-	0%{
-		opacity: 0;
-	}
-	100%{
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*mudança de cor do link no hover*/
 .drop-content a:hover {
@@ -471,6 +477,9 @@ animation: slidedown 0.5s ease;
   .login-e-icones {
     align-self: flex-end;
   }
+  	.login-reg{
+		padding-right: 4rem;
+	}
   input::-webkit-calendar-picker-indicator {
     display: none;
   }
@@ -479,7 +488,7 @@ animation: slidedown 0.5s ease;
     font-weight: bolder;
   }
   .logo {
-     width: 1.2rem;
+    height: 3.7rem;
   }
 }
 /*usado para aumentar ou mostrar elementos em telas maiores*/
