@@ -355,6 +355,7 @@ body {
   align-items: center;
   animation: fadeInAll ease 1s;
   animation-fill-mode: forwards;
+		background-color:#f4f4f48a; 
 }
 /*inicio do elemento principal*/
 h3 {
