@@ -312,7 +312,7 @@ h1 {
 .promocoes {
   font-weight: 600;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30vmax, 1fr));
   gap: 1rem;
   padding: 0.5rem;
   animation: slidedown 2s ease;
@@ -368,11 +368,11 @@ h1 {
   display: grid;
   border-radius: 0.5rem;
   overflow: hidden;
-  --gallery-aspect-ratio: 4/3;
+  --promo-card-aspect-ratio: 4/3;
 }
 @supports (aspect-ratio:1) {
   .promo-card figure, .promo-card img {
-    aspect-ratio: var(--gallery-aspect-ratio);
+    aspect-ratio: var(--promo-card-aspect-ratio);
     height: auto;
   }
 }
