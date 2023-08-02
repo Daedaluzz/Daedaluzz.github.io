@@ -56,7 +56,7 @@ body {
   }
 }
 .cabecalho-top {
-  padding: 0px 1rem 0px 1rem;
+  padding: 0px 1vw 0px 1vw;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -138,7 +138,6 @@ body {
 /*container do drop*/
 .drop-container {
   padding-top: 1rem;
-  align-self: center;
   text-align: right;
   position: absolute;
   right: 0;
@@ -147,12 +146,10 @@ body {
 /*conteudo do drop*/
 .drop-content {
   position: relative;
-  margin-top: 1rem;
-  width: 92vw;
+  width: 100vw;
+  right: -1vw;
   display: none;
-  right: 0px;
   background-color: var(--dark-grey);
-  border-radius: 0.5rem;
   animation: slidedown 0.6s ease-in;
 }
 @keyframes slidedown {
@@ -231,9 +228,9 @@ body {
   width: 100%;
   background-size: cover;
   background-image: url("../Images/background-gradient.png");
-  animation: faixa 4s;
+	animation: faixa-dale 4s ease;
 }
-@keyframes faixa {
+@keyframes faixa-dale {
   0% {
     width: 0%;
   }
@@ -379,12 +376,16 @@ body {
   font-weight: bolder;
   animation: fade-inC 6s;
   z-index: 1;
+	position: absolute;
+	top:47%;
 }
 @keyframes fade-inC {
   0% {
+	  transform: translateY(-200%);
     opacity: 0;
   }
   100% {
+	  transform: translateY(0%);
     opacity: 1;
   }
 }
@@ -395,18 +396,32 @@ body {
   width: 100%;
   height: 0.2rem;
   z-index: 1;
-  animation: faixah 4s linear;
 }
 .linhah2 {
   position: absolute;
   /*top:63rem;*/
-  top: 73.1vh;
+  top: 72vh;
   margin: 1rem 0 0 0;
   background-color: var(--yellow);
   width: 100%;
   height: 0.2rem;
   z-index: 1;
-  animation: faixah 4s linear;
+  
+}
+@keyframes faixah {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.ani1{
+  opacity: 0;
+}
+.animate1{
+  opacity: 1;
+	animation: faixah 4s linear;
 }
 .linha1 {
   margin: 1rem 0 0 0;
@@ -414,15 +429,13 @@ body {
   height: 25rem;
   width: 0.2rem;
   z-index: 1;
-  animation: faixav 4s linear;
 }
 .linha2 {
-  margin: 0 0 0.6rem 0;
+  margin: 0 0 1.4rem 0;
   background-color: var(--yellow);
   height: 25rem;
   width: 0.2rem;
   z-index: 1;
-  animation: faixav 4s linear;
 }
 @keyframes faixav {
   0% {
@@ -432,13 +445,12 @@ body {
     height: 25rem;
   }
 }
-@keyframes faixah {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
+.ani {
+  opacity: 0;
+}
+.animate {
+  opacity: 1;
+  animation: faixav 4s linear;
 }
 .video {
   position: absolute;
@@ -483,21 +495,29 @@ body {
   text-align: center;
   border-radius: 50%;
   width: 25vmin;
-	height: 25vmin;
+  height: 25vmin;
   border: solid 0.2rem var(--dark-grey);
   background-color: var(--light-grey);
   border-style: dotted;
   z-index: 1;
 }
-
-.span-normal{
-	  font-size: 2vmin;
-	font-weight: bold;
+.ani2 {
+  opacity: 0;
+}
+.animate2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+  transition-delay: 0.5s;
+}
+.span-normal {
+  font-size: 2vmin;
+  font-weight: bold;
 }
 .span-destaque {
   font: lighter 5rem "Inter";
   color: var(--blue);
-	  font-size: 6vmin;
+  font-size: 6vmin;
 }
 .linha-bola {
   border-top: solid 0.2rem var(--dark-grey);
@@ -506,7 +526,7 @@ body {
   position: absolute;
 }
 .galeria-home {
-list-style: none;
+  list-style: none;
   margin-top: 2rem;
   width: 100%;
   display: grid;
@@ -534,24 +554,22 @@ list-style: none;
   height: var(--galeria-home-height);
   object-fit: cover;
 }
-.galeria-home figcaption{
-	  position: absolute;
-	top: 50%;
-	left: 0;
-	right: 0;
-	margin: auto;
+.galeria-home figcaption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
   padding: 0.25em 0.5em;
-	width: 40vmin;
-	height: 20vmin;
-	background-color: transparent;
-	border: solid 0.5vmin white;
-	border-style: dotted;
+  width: 40vmin;
+  height: 20vmin;
+  background-color: transparent;
+  border: solid 0.5vmin white;
+  border-style: dotted;
   transition: transform 600ms ease-in;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-	
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .footer {
   margin-top: 1rem;

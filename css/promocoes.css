@@ -341,7 +341,7 @@ h1 {
 }
 .promo-card:after {
   content: '';
-  width: 0.2rem;
+  width: 0.5rem;
   height: 20rem;
   position: absolute;
   left: 1%;
