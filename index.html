@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Farol Destinos</title>
 <link rel="stylesheet" href="css/estilos.css">
-			
 </head>
 <body >
-<header class="cabecalho"> <!--Cabeçalho-->
+<header class="cabecalho" id="cabecalho"> <!--Cabeçalho-->
   <div class="cabecalho-top"> <a class="logo-e-texto" href="index.html"> <img src="Images/dakrgreylogo-png-54x150png.png" class="logo">
     <div class="texto-logo"><span>FAROL</span> <span>DESTINOS</span></div>
     </a> 
@@ -77,9 +76,10 @@
     </div>
     <div class="linhah1 ani1"></div>
     <div class="linha1 ani"></div>
-    <h1>A <span style="color: #fbdb2c">LUZ</span> QUE GUIA VOCÊ NAS SUAS AVENTURAS</h1>
+    <h1 class="texto-video">A <span class="texto-video" style="color: #fbdb2c">LUZ</span> QUE GUIA VOCÊ NAS SUAS AVENTURAS</h1>
     <div class="linha2 ani"></div>
-    <div class="linhah2 ani1"></div> </div>
+    <div class="linhah2 ani1"></div>
+  </div>
   <container class="c-att">
     <p>Aventuras inspiradoras, paisagens exuberantes e sensações marcantes. Nossa completa experiência para tornar sua próxima viagem inesquecível.</p>
     <container>
@@ -88,43 +88,53 @@
       <div class="ani2"><span class="span-destaque">100%</span><span class="span-normal">De compensação de carbono.</span></div>
       <span class="linha-bola"></span> </container>
   </container>
-    <ul class="galeria-home">
-      <li>
-        <figure><img src="Images/arraialdocabo.jpg">
-          <figcaption>Arraial do Cabo</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure><img src="Images/sp2.jpg">
-          <figcaption>SP</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure><img src="Images/porteirinha.webp">
-          <figcaption>Porteirinha</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure><img src="Images/noronha.jpg">
-          <figcaption>Noronha</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure><img src="Images/pelourinho.jpg">
-          <figcaption>Pelourinho</figcaption>
-        </figure>
-      </li>
-		 <li>
-        <figure><img src="Images/pracadaliberdade.webp">
-          <figcaption>Praça da Liberdade</figcaption>
-        </figure>
-      </li>
-    </ul>
+  <ul class="galeria-home">
+    <li>
+      <figure><img src="Images/arraialdocabo.jpg">
+        <figcaption class="figc">Arraial do Cabo</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/sp2.jpg">
+        <figcaption class="figc">Avenida Paulista</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/porteirinha.webp">
+        <figcaption class="figc">Porteirinha</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/noronha.jpg">
+        <figcaption class="figc">Noronha</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/pelourinho.jpg">
+        <figcaption class="figc">Pelourinho</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/pracadaliberdade.webp">
+        <figcaption class="figc">Praça da Liberdade</figcaption>
+      </figure>
+    </li>
+  </ul>
 </main>
 <footer class="footer">
-  <p>Farol Destinos &copy;2023. Todos os diretos pertencentes a Arthur Bernard.</p>
+	<span class="fd ani3">FAROL DESTINOS</span>
+	<span class="footer-textp ani3">FAROL DESTINOS é um projeto fictício que foi criado para o curso Recode Pro 2023. Gostou do meu trabalho? Entre em contato comigo.</span>
+	<span class="contatos"><div><span style="text-align: end">Github</span><a href="https://github.com/Daedaluzz" target="_blank" style="text-align: end">github.com/Daedaluzz</a></div><span class="faixa-contatos"></span><div><span>Linked-In</span><a href="https://www.linkedin.com/in/ber-arthur"  target="_blank">linkedin.com/in/ber-arthur</a></div></span>
+	<span class="email ani3">arthurbernardpereira@gmail.com</span>
+  <container class="container-footer">
+<div class="footer-textb"><span class="footer-textb">&copy;2023 ARTHUR FREITAS. TODOS OS DIREITOS RESERVADOS </span>
+    <p class="footer-textb">Objetivo sem um plano é só um desejo.</p>
+  </div>
+  </container>
 </footer>
-	
-	<script src="js/main.js"></script>
+<a href="#cabecalho">
+<button id="btntopo">▲</button>
+</a> 
+<script src="js/main.js"></script>
 </body>
 </html>
