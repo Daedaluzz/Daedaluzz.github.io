@@ -1,4 +1,4 @@
-//faixas verticais
+//faixas verticais - home
 const animation_elements = document.querySelectorAll('.ani');
 
 const observer = new IntersectionObserver((entries) => {
@@ -18,7 +18,7 @@ for (let i = 0; i < animation_elements.length; i++) {
 
 	observer.observe(el);
 }
-//faixas horizontais
+//faixas horizontais - home
 const animation_elements1 = document.querySelectorAll('.ani1');
 
 const observer1 = new IntersectionObserver((entries) => {
@@ -38,7 +38,7 @@ for (let i = 0; i < animation_elements1.length; i++) {
 
 	observer1.observe(el);
 }
-//circulos
+//circulos - home
 const animation_elements2 = document.querySelectorAll('.ani2');
 const observer2 = new IntersectionObserver((entries) => {
 	entries.forEach((entry) => {
@@ -76,4 +76,40 @@ for (let i = 0; i < animation_elements3.length; i++) {
 	const el = animation_elements3[i];
 
 	observer3.observe(el);
+}
+//faixas verticais - pacotes
+const animation_elements4 = document.querySelectorAll('.ani4');
+const observer4 = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('animate4');
+		} else {
+			entry.target.classList.remove('animate4');
+		}
+	})
+} 
+);
+
+for (let i = 0; i < animation_elements4.length; i++) {
+	const el = animation_elements4[i];
+
+	observer4.observe(el);
+}
+//faixas horizontais -  pacotes
+const animation_elements5 = document.querySelectorAll('.ani5');
+const observer5 = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('animate5');
+		} else {
+			entry.target.classList.remove('animate5');
+		}
+	})
+} 
+);
+
+for (let i = 0; i < animation_elements5.length; i++) {
+	const el = animation_elements5[i];
+
+	observer5.observe(el);
 }

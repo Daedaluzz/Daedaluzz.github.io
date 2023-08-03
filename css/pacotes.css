@@ -46,8 +46,8 @@ body {
   flex-wrap: wrap;
   animation: fadeInAll ease 4s;
   animation-fill-mode: forwards;
-	position: relative;
-	z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 @keyframes fadeInAll {
   0% {
@@ -94,6 +94,7 @@ body {
   font-weight: 800;
   justify-content: center;
   gap: 2rem;
+  position: relative;
 }
 .login-reg {
   display: flex;
@@ -135,35 +136,29 @@ body {
 }
 /*container do drop*/
 .drop-container {
-	padding-top: 1rem;
-  align-self: center;
+  padding-top: 1rem;
   text-align: right;
   position: absolute;
-	right: 0;
-	top:0;
-	z-index: 1;
+  right: 0;
+  top: 0;
 }
 /*conteudo do drop*/
 .drop-content {
-	position: relative;
-	margin-top:1rem;
- width: 92vw;
+  position: relative;
+  width: 100vw;
+  right: -1vw;
   display: none;
-  right: 0px;
   background-color: var(--dark-grey);
-  border-radius: 0.5rem;
-	 animation: slidedown 0.6s ease-in;
-	z-index: 1;
-
+  animation: slidedown 0.6s ease-in;
 }
 @keyframes slidedown {
   0% {
-	  transform: translateY(-1rem);
-	  height: 0;
+    transform: translateY(-1rem);
+    height: 0;
   }
   100% {
-	  transform: translateY(0rem);
-	  height: 100%;
+    transform: translateY(0rem);
+    height: 100%;
   }
 }
 /*links do dropdown*/
@@ -333,7 +328,7 @@ body {
 }
 .pacotes li {
   background-color: #f4f4f48a;
-	border-radius: 0.5rem;
+  border-radius: 0.5rem;
   position: relative;
   width: 100%;
   flex-basis: 1 1 300px;
@@ -381,9 +376,8 @@ figure:hover figcaption {
 .faixah {
   align-self: flex-end;
   width: 100%;
-  height: 0.2rem;
+  height: 1px;
   background-color: var(--blue);
-  animation: faixah 5s ease;
   left: 0;
 }
 @keyframes faixah {
@@ -394,12 +388,18 @@ figure:hover figcaption {
     width: 100%;
   }
 }
+.ani5 {
+  opacity: 0;
+}
+.animate5 {
+  opacity: 1;
+  animation: faixah 3s ease;
+}
 .faixav {
   margin-left: 0.5rem;
-  width: 0.2rem;
+  width: 1px;
   height: 25rem;
   background-color: var(--blue);
-  animation: faixav 5s ease;
 }
 @keyframes faixav {
   0% {
@@ -408,6 +408,13 @@ figure:hover figcaption {
   100% {
     height: 25rem;
   }
+}
+.ani4 {
+  opacity: 0;
+}
+.animate4 {
+  opacity: 1;
+  animation: faixav 3s ease;
 }
 .pacotes container {
   display: flex;
@@ -467,19 +474,136 @@ h3 {
   color: var(--blue);
   border: thin solid var(--blue);
 }
+#btntopo {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 2;
+  border: solid 1px var(--yellow);
+  background-color: transparent;
+  color: var(--yellow);
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+}
 .footer {
   margin-top: 1rem;
   width: 100%;
   background-color: var(--dark-grey);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.fd {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font: normal 5vmin "two Weekends Sans";
+  color: var(--light-grey);
+}
+.animate3:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  bottom: -2rem;
+  background-color: var(--light-grey);
+  animation: divisoria 3s ease;
+}
+.footer-textp {
+  padding: 4rem 2rem 2rem 2rem;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font: lighter 1.5rem Inter;
+  color: var(--light-grey);
   text-align: center;
+}
+.contatos {
+  margin-top: 2rem;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+}
+.contatos > div > span {
+  text-decoration: none;
+  font: lighter 2rem Inter;
+  color: var(--light-grey);
+  height: 100%;
+  align-self: stretch;
+}
+.contatos > div {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contatos > div > a {
+  text-decoration: none;
+  font: 300 2rem Inter;
+  color: var(--light-grey);
+  height: 100%;
+  align-self: stretch;
+}
+.email {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font: 300 2rem Inter;
+  color: var(--blue);
+  width: 100%;
+}
+.faixa-contatos {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: var(--light-grey);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.footer-textb {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.footer p {
-  color: var(--light-grey);
+.footer-textb {
   text-align: center;
+  font: lighter 1.2rem Inter;
+  color: var(--light-grey);
+  height: 100%;
+}
+.ani3 {
+  opacity: 0;
+}
+.animate3 {
+  opacity: 1;
+}
+@keyframes divisoria {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 /*usado para aumentar ou mostrar elementos para telas menores*/
 @media only screen and (max-width: 600px) {
@@ -492,15 +616,18 @@ h3 {
   .login-e-icones {
     align-self: flex-end;
   }
- 	.login-reg{
-		padding-right: 4rem;
-	}
+  .login-reg {
+    padding-right: 4rem;
+  }
   .passagem, .bt-bvoo, .logo-e-texto {
     font-size: 1.4rem;
     font-weight: bolder;
   }
   .logo {
     height: 3.7rem;
+  }
+  .faixa-contatos {
+    display: none;
   }
 }
 /*usado para aumentar ou mostrar elementos em telas maiores*/

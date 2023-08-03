@@ -134,33 +134,29 @@ body {
 }
 /*container do drop*/
 .drop-container {
-	padding-top: 1rem;
-  align-self: center;
+  padding-top: 1rem;
   text-align: right;
   position: absolute;
-	right: 0;
-	top:0;
+  right: 0;
+  top: 0;
 }
 /*conteudo do drop*/
 .drop-content {
-	position: relative;
-	margin-top:1rem;
- width: 92vw;
+  position: relative;
+  width: 100vw;
+  right: -1vw;
   display: none;
-  right: 0px;
   background-color: var(--dark-grey);
-  border-radius: 0.5rem;
-	 animation: slidedown 0.6s ease-in;
-
+  animation: slidedown 0.6s ease-in;
 }
 @keyframes slidedown {
   0% {
-	  transform: translateY(-1rem);
-	  height: 0;
+    transform: translateY(-1rem);
+    height: 0;
   }
   100% {
-	  transform: translateY(0rem);
-	  height: 100%;
+    transform: translateY(0rem);
+    height: 100%;
   }
 }
 /*links do dropdown*/
@@ -276,6 +272,148 @@ body {
   flex-direction: column;
 	animation: fadeInAll ease 4s;
   animation-fill-mode: forwards;
+	justify-content: center;
+	align-items: center;
+}
+h1{
+	margin: 2rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100vw;
+	height: 35rem;
+	color: var(--light-grey);
+	font: normal 8vmin inter;
+	background-color: var(--blue);
+}
+h1 > p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	font: lighter 5vmin Inter;
+	color:var(--light-grey);
+	width: 100%;
+}
+h1 > p:after{
+	content: '';
+	  position: absolute;
+  width: 100%;
+	height: 2px;
+	bottom: -1rem;
+background-color: var(--light-grey);
+}
+.contato-main{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--dark-grey);
+	
+}
+.form-contato{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	height: 90%;
+	margin: 0 auto;
+	background-color: var(--dark-grey);
+	border-radius: 0.5rem;
+	padding:2rem;
+}
+.divisor{
+	width: 100%;
+	height: 10rem;
+	display: flex;
+	justify-content: center;
+	gap:2rem;
+}
+.divisor > span{
+	width: 100%;
+	
+}
+label{
+	color: var(--light-grey);
+	font-size: 2vmin;
+	height: 10rem;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	gap:2rem;
+}
+input{
+	width: 100%;
+	outline: none;
+	border:none;
+	border-bottom: solid 1px var(--light-grey);
+	background-color: transparent;
+}
+label:focus-within input{
+	color: var(--yellow);
+	border-bottom: solid 1px var(--yellow);
+	
+}
+label:focus-within{
+	color: var(--yellow);
+}
+.form-contato > button{
+	border: solid thin var(--light-grey);
+	background-color: transparent;
+	width: 15vmax;
+	height: 5vmax;
+	color: var(--light-grey);
+	font:lighter 2rem Inter;
+	cursor: pointer;
+	border-radius: 0.4rem;
+}
+.form-contato > button:hover{
+		color: var(--yellow);
+	border: solid thin var(--yellow);
+}
+.form-contato > div{
+	width: 100%;
+	height: 20rem;
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap:2rem;
+}
+h3{
+	color: var(--yellow);
+	text-align: center;
+	font: lighter 5vmin Inter;
+}
+.form-contato > div > p{
+	color: var(--yellow);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid thin var(--yellow);
+	border-radius: 0.4rem;
+	height: 5rem;
+	padding: 0 1rem;
+}
+#btntopo {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 2;
+  border: solid 1px var(--yellow);
+  background-color: transparent;
+  color: var(--yellow);
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+	
 }
 .footer {
   margin-top: 1rem;
@@ -283,12 +421,117 @@ body {
   background-color: var(--dark-grey);
   display: flex;
   flex-direction: column;
-	text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.fd {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font: normal 5vmin "two Weekends Sans";
+  color: var(--light-grey);
+}
+.animate3:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  bottom: -2rem;
+  background-color: var(--light-grey);
+  animation: divisoria 3s ease;
+}
+.footer-textp {
+  padding: 4rem 2rem 2rem 2rem;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font: lighter 1.5rem Inter;
+  color: var(--light-grey);
+  text-align: center;
+}
+.contatos {
+  margin-top: 2rem;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+}
+.contatos > div > span {
+  text-decoration: none;
+  font: lighter 2rem Inter;
+  color: var(--light-grey);
+  height: 100%;
+  align-self: stretch;
+}
+.contatos > div {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contatos > div > a {
+  text-decoration: none;
+  font: 300 2rem Inter;
+  color: var(--light-grey);
+  height: 100%;
+  align-self: stretch;
+}
+.email {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font: 300 2rem Inter;
+  color: var(--blue);
+  width: 100%;
+}
+.faixa-contatos {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: var(--light-grey);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.footer-textb {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.footer p {
+.footer-textb {
+  text-align: center;
+  font: lighter 1.2rem Inter;
   color: var(--light-grey);
+  height: 100%;
+}
+.ani3 {
+  opacity: 0;
+}
+.animate3 {
+  opacity: 1;
+}
+@keyframes divisoria {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 /*usado para aumentar ou mostrar elementos para telas menores*/
 @media only screen and (max-width: 600px) {
@@ -310,6 +553,9 @@ body {
   }
   .logo {
     height: 3.7rem;
+  }
+	.faixa-contatos {
+    display: none;
   }
 }
 /*usado para aumentar ou mostrar elementos em telas maiores*/
