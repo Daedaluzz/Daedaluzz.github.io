@@ -7,16 +7,16 @@
 <link rel="stylesheet" href="css/destinos.css">
 </head>
 <body >
-<header class="cabecalho"> <!--Cabeçalho-->
-  <div class="cabecalho-top"> <a class="logo-e-texto" href="index.html">
-   <!--Logo e texto-->
-	  <img src="Images/dakrgreylogo-png-54x150png.png" class="logo">
+<header class="cabecalho"  id="cabecalho"> <!--Cabeçalho-->
+  <div class="cabecalho-top"> <a class="logo-e-texto" href="index.html"> 
+    <!--Logo e texto--> 
+    <img src="Images/dakrgreylogo-png-54x150png.png" class="logo">
     <div class="texto-logo"><span>FAROL</span> <span>DESTINOS</span></div>
-    </a> 
+    </a>
     <div class="login-e-icones">
       <div class="icones"> <a class="icone-facebook" href=""></a> <a class="icone-insta" href=""></a> <a class="icone-email" href=""></a> </div>
-      <!--Login--> 
-		<div class="login-reg">
+      <!--Login-->
+      <div class="login-reg">
         <div class="icone-reg"></div>
         <div>
           <div class="login-cadastro"><a href="">Entrar</a></div>
@@ -28,8 +28,6 @@
         <div class="drop-content"> <a href="index.html">HOME</a> <a style="color: #fbdb2c" href="destinos.html">DESTINOS</a> <a href="promocoes.html">PROMOÇÕES</a> <a href="pacotes.html">PACOTES</a> <a href="contato.html">CONTATO</a></div>
       </div>
     </div>
-    
-   
   </div>
   <div class="faixa"></div>
   <nav class="nav-bar">
@@ -68,9 +66,18 @@
 </header>
 <!--Fim Cabeçalho-->
 <main class="main">
-	 <h3>O destino da sua próxima aventura é aqui!</h3>
-	<!--Inicio do mapa com grid-->
-		<div class="grid-mapa">
+  <section class="destinos">
+	  <h1 class="animado">TO INDO PRA</h1>
+    <container class="texto-e-img">
+		<div class="texto-destinos">
+		<h2>Encontre aqui o destino certo pra sua próxima memória marcante.</h2><p>Seja litorais com areia branca e águas azuis ou cidades com uma história pra contar, aqui você vai encontrar os melhores destinos pra sua viagem.</p></div>
+		<figure><img src="Images/corc.jpg"></figure>
+    </container>
+  </section>
+  <!--Inicio do mapa com grid-->
+	<section class="mapa">
+		<h2>Escolha agora um dos nossos destinos mais procurados</h2>
+  <div class="grid-mapa">
     <div class="pe  farolzin">
       <p>PE</p>
       <figure class="pe-img">
@@ -107,43 +114,94 @@
         <figcaption>Porto Alegre - RS</figcaption>
       </figure>
     </div>
-			<div class="am farolzin">
+    <div class="am farolzin">
       <p>AM</p>
       <figure class="am-img">
         <figcaption>Manaus - AM</figcaption>
       </figure>
     </div>
-			<div class="pa farolzin">
+    <div class="pa farolzin">
       <p>PA</p>
       <figure class="pa-img">
         <figcaption>Belém - PA</figcaption>
       </figure>
     </div>
-			<div class="mt farolzin">
+    <div class="mt farolzin">
       <p>MT</p>
       <figure class="mt-img">
         <figcaption>Cuiabá - MT</figcaption>
       </figure>
     </div>
   </div>
-	<!--fim do mapa com grid-->
-	<!--Inicio da galeria mobile-->
-	<ul class="grid-galeria">
-		<li><figure><img src="Images/recife.jpg" alt=""><figcaption>Recife - PE</figcaption></figure></li>
-		<li><figure><img src="Images/salvador.jpg" alt=""><figcaption>Salvador - BA</figcaption></figure></li>
-		<li><figure><img src="Images/bh.jpg" alt=""><figcaption>Belo Horizonte - MG</figcaption></figure></li>
-		<li><figure><img src="Images/RJ.jpg" alt=""><figcaption>Rio de Janeiro - RJ </figcaption></figure></li>
-		<li><figure><img src="Images/sp.jpg" alt=""><figcaption>São Paulo - SP</figcaption></figure></li>
-		<li><figure><img src="Images/rs.jpg" alt=""><figcaption>Porto Alegre - RS</figcaption></figure></li>
-			<li><figure><img src="Images/am.jpg" alt=""><figcaption>Manaus - AM </figcaption></figure></li>
-		<li><figure><img src="Images/pa.jpeg" alt=""><figcaption>Belém - PA</figcaption></figure></li>
-		<li><figure><img src="Images/mt.jpg" alt=""><figcaption>Cuiabá - MT</figcaption></figure></li>
-	</ul>
-	<!--fim da galeria mobile-->
+		</section>
+  <!--fim do mapa com grid--> 
+  <!--Inicio da galeria mobile-->
+  <ul class="grid-galeria">
+    <li>
+      <figure><img src="Images/recife.jpg" alt="">
+        <figcaption>Recife - PE</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/salvador.jpg" alt="">
+        <figcaption>Salvador - BA</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/bh.jpg" alt="">
+        <figcaption>Belo Horizonte - MG</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/RJ.jpg" alt="">
+        <figcaption>Rio de Janeiro - RJ </figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/sp.jpg" alt="">
+        <figcaption>São Paulo - SP</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/rs.jpg" alt="">
+        <figcaption>Porto Alegre - RS</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/am.jpg" alt="">
+        <figcaption>Manaus - AM </figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/pa.jpeg" alt="">
+        <figcaption>Belém - PA</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure><img src="Images/mt.jpg" alt="">
+        <figcaption>Cuiabá - MT</figcaption>
+      </figure>
+    </li>
+  </ul>
+  <!--fim da galeria mobile-->
+  <section>
+    <h2></h2>
+  </section>
 </main>
-<div></div>
 <footer class="footer">
-  <p>Farol Destinos &copy;2023. Todos os diretos pertencentes a Arthur Bernard.</p>
+	<span class="fd ani3">FAROL DESTINOS</span>
+	<span class="footer-textp ani3">FAROL DESTINOS é um projeto fictício que foi criado para o curso Recode Pro 2023. Gostou do meu trabalho? Entre em contato comigo.</span>
+	<span class="contatos"><div><span style="text-align: end">Github</span><a href="https://github.com/Daedaluzz" target="_blank" style="text-align: end">github.com/Daedaluzz</a></div><span class="faixa-contatos"></span><div><span>Linked-In</span><a href="https://www.linkedin.com/in/ber-arthur"  target="_blank">linkedin.com/in/ber-arthur</a></div></span>
+	<span class="email ani3">arthurbernardpereira@gmail.com</span>
+  <container class="container-footer">
+<div class="footer-textb"><span class="footer-textb">&copy;2023 ARTHUR FREITAS. TODOS OS DIREITOS RESERVADOS </span>
+    <p class="footer-textb">Objetivo sem um plano é só um desejo.</p>
+  </div>
+  </container>
 </footer>
+<a href="#cabecalho">
+<button id="btntopo">▲</button>
+</a> 
+	<script src="js/destinos.js"></script>
 </body>
 </html>

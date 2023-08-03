@@ -362,16 +362,146 @@ body {
 		background-color:#f4f4f48a; 
 }
 /*inicio do elemento principal*/
-h3 {
-  margin-top: 1rem;
+.destinos{
+	position: relative;
+  width: 100vw;
+	height: 100vh;
+	margin-top: 2rem;
+	background-color: var(--light-grey);
+}
+h1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+  margin-top: 2rem;
   color: var(--dark-grey);
-  font-size: 2rem;
-  text-align: center;
-  text-shadow: 0.5rem 0.5rem 1rem white;
+	font-size: 3rem;
+  position: relative;
+	height: 20vh;
+	overflow: hidden;
+}
+.animado:after {
+	font:lighter 3rem Inter;
+	color: var(--yellow);
+	margin-left:1rem;
+  content: " ";
+	  animation: cidades 20s linear infinite;
+}
+
+@keyframes cidades {
+  0% {
+    content: "BELO HORIZONTE.";
+  }
+  25% {
+    content: "RECIFE";
+  }
+
+  50% {
+    content: "MANAUS";
+  }
+	
+  75% {
+    content: "SÃO PAULO.";
+  }
+
+	100% {
+    content: "SALVADOR";
+  }
+}
+
+.texto-e-img {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 70vh;
+  width: 100%;
+		padding: 0 2rem;
+	gap:0.5rem;
+}
+.texto-e-img > h1{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.texto-destinos{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	text-align: right;
+	width: 20rem;
+	padding-right: 0.5rem;
+	border-right: solid 1px var(--yellow);
+}
+.texto-destinos > h2{
+	font: lighter 3rem Inter;
+}
+.texto-destinos > p{
+	font-size: 1.5rem;
+}
+.texto-e-img > figure{
+	position: relative;
+	height: 100%;
+}
+.texto-e-img > figure > img{
+	width: 100%;
+	height: 100%;
+		object-fit: cover;
+		display: block;
+}
+  /*animation: slidedown 2s ease;*/
+
+@keyframes slidedown {
+  0% {
+    opacity: 0;
+    height: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+    transform: translateY(0);
+  }
+}
+.mapa{
+	margin-top: 2rem;
+	background-color: var(--dark-grey);
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.mapa > h2{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20rem;
+	color: var(--light-grey);
+	font-size: 3rem;
+	text-align: center;
+}
+.mapa > h2:after{
+	content: '';
+	width: 100%;
+	height: 1px;
+	background-color: var(--yellow);
+	position: absolute;
+	bottom: 0;
 }
 /*inicio da grid do mapa*/
 /*position relative no pai e position absolut no filho para fixar a imagem ao farol*/
 .grid-mapa {
+	position: relative;
   width: 700px;
   height: 700px;
   display: grid;
@@ -381,6 +511,31 @@ h3 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center, top;
+}
+.grid-mapa:before{
+	content: '';
+	width: 1px;
+	height: 100%;
+	background-color: var(--yellow);
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	margin: auto;
+	animation: slidedown 2s ease;
+	animation-delay: 2s;
+}
+.grid-mapa:after{
+	content: '';
+	width: 1px;
+	height: 100%;
+	background-color: var(--yellow);
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	margin: auto;
+	right: 0;
+	animation: slidedown 2s ease;
+	animation-delay: 2s;
 }
 .farolzin {
   position: relative;
@@ -644,18 +799,136 @@ figcaption {
   margin-bottom: 0.5rem;
 }
 /*fim da galeria mobile*/
+#btntopo {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 2;
+  border: solid 1px var(--yellow);
+  background-color: transparent;
+  color: var(--yellow);
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+}
 .footer {
   margin-top: 1rem;
   width: 100%;
   background-color: var(--dark-grey);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.fd {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font: normal 5vmin "two Weekends Sans";
+  color: var(--light-grey);
+}
+.animate3:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  bottom: -2rem;
+  background-color: var(--light-grey);
+  animation: divisoria 3s ease;
+}
+.footer-textp {
+  padding: 4rem 2rem 2rem 2rem;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font: lighter 1.5rem Inter;
+  color: var(--light-grey);
   text-align: center;
+}
+.contatos {
+  margin-top: 2rem;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+}
+.contatos > div > span {
+  text-decoration: none;
+  font: lighter 2rem Inter;
+  color: var(--light-grey);
+  height: 100%;
+  align-self: stretch;
+}
+.contatos > div {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contatos > div > a {
+  text-decoration: none;
+  font: 300 2rem Inter;
+  color: var(--light-grey);
+  height: 100%;
+  align-self: stretch;
+}
+.email {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font: 300 2rem Inter;
+  color: var(--blue);
+  width: 100%;
+}
+.faixa-contatos {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: var(--light-grey);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.footer-textb {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.footer p {
+.footer-textb {
+  text-align: center;
+  font: lighter 1.2rem Inter;
   color: var(--light-grey);
+  height: 100%;
+}
+.ani3 {
+  opacity: 0;
+}
+.animate3 {
+  opacity: 1;
+}
+@keyframes divisoria {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 /*usado para aumentar ou mostrar elementos para telas menores*/
 @media only screen and (max-width: 600px) {
@@ -680,6 +953,9 @@ figcaption {
   }
   .logo {
     height: 3.7rem;
+  }
+	.faixa-contatos {
+    display: none;
   }
 }
 /*usado para aumentar ou mostrar elementos em telas maiores*/

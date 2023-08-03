@@ -72,7 +72,7 @@ const observer3 = new IntersectionObserver((entries) => {
 	threshold: 0.5
 });
 
-for (let i = 0; i < animation_elements2.length; i++) {
+for (let i = 0; i < animation_elements3.length; i++) {
 	const el = animation_elements3[i];
 
 	observer3.observe(el);
